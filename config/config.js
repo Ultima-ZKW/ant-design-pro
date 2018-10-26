@@ -95,11 +95,8 @@ export default {
     },
   },
   manifest: {
-    basePath:"/"
+    basePath: '/',
   },
 
   chainWebpack: webpackPlugin,
-  cssnano: {
-    mergeRules: false,
-  },
 };
