@@ -38,7 +38,7 @@ export default class TopNavHeader extends PureComponent {
                 maxWidth,
               }}
             >
-              <BaseMenu {...this.props} style={{ border: 'none', height: 52 }} />
+              <BaseMenu {...this.props} style={{ border: 'none', height: 50 }} />
             </div>
           </div>
           <RightContent {...this.props} />

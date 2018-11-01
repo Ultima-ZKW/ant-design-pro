@@ -202,7 +202,7 @@ class BasicLayout extends React.PureComponent {
     const { fixedHeader } = this.props;
     return {
       margin: '24px 24px 0',
-      paddingTop: fixedHeader ? 52 : 0,
+      paddingTop: fixedHeader ? 50 : 0,
     };
   };
 
