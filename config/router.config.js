@@ -136,6 +136,19 @@ export default [
           },
         ],
       },
+      // list
+      {
+        path: '/system',
+        icon: 'table',
+        name: 'system',
+        routes: [
+          {
+            path: '/system/role-manage',
+            name: 'rolemanage',
+            component: './System/RoleManage',
+          },
+        ],
+      },
       {
         path: '/profile',
         name: 'profile',
