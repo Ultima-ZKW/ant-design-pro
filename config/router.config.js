@@ -147,6 +147,11 @@ export default [
             name: 'rolemanage',
             component: './System/RoleManage',
           },
+          {
+            path: '/system/nav-manage',
+            name: 'navmanage',
+            component: './System/NavManage',
+          },
         ],
       },
       {

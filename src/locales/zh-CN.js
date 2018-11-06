@@ -285,4 +285,5 @@ export default {
 
   'menu.system': '系统管理',
   'menu.system.rolemanage': '角色管理',
+  'menu.system.navmanage': '导航管理',
 };

@@ -23,7 +23,7 @@ import {
 import StandardTable from '@/components/StandardTable';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
-import styles from './RoleManage.less';
+import styles from './NavManage.less';
 
 const FormItem = Form.Item;
 const { Step } = Steps;
@@ -493,13 +493,27 @@ class RoleManage extends PureComponent {
           gutter={{ xs: 32, sm: 32, md: 32, lg: 32, xl: 32, xxl: 32 }}
         >
           <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={4}>
-            <FormItem label="角色名称">
-              {getFieldDecorator('roleName')(<Input placeholder="请输入" />)}
+            <FormItem label="导航名称">
+              {getFieldDecorator('navName')(<Input placeholder="请输入" />)}
             </FormItem>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={4}>
-            <FormItem label="角色状态">
-              {getFieldDecorator('roleStatus', {
+            <FormItem label="导航类型">
+              {getFieldDecorator('navType', {
+                initialValue: 'ALL',
+              })(
+                <Select style={{ width: '100%' }}>
+                  <Option value="ALL">全部</Option>
+                  <Option value="CATALOG">目录</Option>
+                  <Option value="MEUN">菜单</Option>
+                  <Option value="BUTTON">按钮</Option>
+                </Select>
+              )}
+            </FormItem>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={4}>
+            <FormItem label="导航状态">
+              {getFieldDecorator('navStatus', {
                 initialValue: 'NORMAL',
               })(
                 <Select style={{ width: '100%' }}>
