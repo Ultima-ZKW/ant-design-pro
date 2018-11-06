@@ -23,7 +23,7 @@ import {
 import StandardTable from '@/components/StandardTable';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
-import styles from './NavManage.less';
+import styles from './MenuManage.less';
 
 const FormItem = Form.Item;
 const { Step } = Steps;
@@ -49,12 +49,12 @@ const CreateForm = Form.create()(props => {
   return (
     <Modal
       destroyOnClose
-      title="新建规则"
+      title="新建菜单"
       visible={modalVisible}
       onOk={okHandle}
       onCancel={() => handleModalVisible()}
     >
-      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="描述">
+      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="菜单名称">
         {form.getFieldDecorator('desc', {
           rules: [{ required: true, message: '请输入至少五个字符的规则描述！', min: 5 }],
         })(<Input placeholder="请输入" />)}
@@ -493,26 +493,12 @@ class RoleManage extends PureComponent {
           gutter={{ xs: 32, sm: 32, md: 32, lg: 32, xl: 32, xxl: 32 }}
         >
           <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={4}>
-            <FormItem label="导航名称">
+            <FormItem label="菜单名称">
               {getFieldDecorator('navName')(<Input placeholder="请输入" />)}
             </FormItem>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={4}>
-            <FormItem label="导航类型">
-              {getFieldDecorator('navType', {
-                initialValue: 'ALL',
-              })(
-                <Select style={{ width: '100%' }}>
-                  <Option value="ALL">全部</Option>
-                  <Option value="CATALOG">目录</Option>
-                  <Option value="MEUN">菜单</Option>
-                  <Option value="BUTTON">按钮</Option>
-                </Select>
-              )}
-            </FormItem>
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={6} xxl={4}>
-            <FormItem label="导航状态">
+            <FormItem label="菜单状态">
               {getFieldDecorator('navStatus', {
                 initialValue: 'NORMAL',
               })(
@@ -562,7 +548,7 @@ class RoleManage extends PureComponent {
     };
     return (
       <PageHeaderWrapper>
-        <Card className={styles.listCard} bordered={false} title="角色管理">
+        <Card className={styles.listCard} bordered={false} title="菜单管理">
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderSimpleForm()}</div>
             <div className={styles.tableListOperator}>

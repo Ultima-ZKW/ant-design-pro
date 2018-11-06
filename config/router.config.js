@@ -136,7 +136,7 @@ export default [
           },
         ],
       },
-      // list
+      // system
       {
         path: '/system',
         icon: 'table',
@@ -148,9 +148,9 @@ export default [
             component: './System/RoleManage',
           },
           {
-            path: '/system/nav-manage',
-            name: 'navmanage',
-            component: './System/NavManage',
+            path: '/system/menu-manage',
+            name: 'menumanage',
+            component: './System/MenuManage',
           },
         ],
       },
