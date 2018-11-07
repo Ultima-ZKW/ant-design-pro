@@ -7,6 +7,7 @@ import {
   Card,
   Form,
   Input,
+  InputNumber,
   Select,
   Icon,
   Button,
@@ -55,8 +56,26 @@ const CreateForm = Form.create()(props => {
       onCancel={() => handleModalVisible()}
     >
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="菜单名称">
-        {form.getFieldDecorator('desc', {
-          rules: [{ required: true, message: '请输入至少五个字符的规则描述！', min: 5 }],
+        {form.getFieldDecorator('menuName', {
+          rules: [
+            { required: true, message: '请输入菜单名称！' },
+            { min: 2, message: '菜单名称最少2个字符！' },
+            { max: 15, message: '菜单名称最多15个字符！' },
+          ],
+        })(<Input placeholder="请输入" />)}
+      </FormItem>
+      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="菜单排序号">
+        {form.getFieldDecorator('menuSortNum', {
+          initialValue: 3,
+          rules: [{ required: true, message: '请输入菜单排序号！' }],
+        })(<InputNumber min={1} max={10} precision={0} />)}
+      </FormItem>
+      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="菜单备注">
+        {form.getFieldDecorator('menuRemark', {
+          rules: [
+            { min: 2, message: '菜单备注最少2个字符！' },
+            { max: 50, message: '菜单备注最多50个字符！' },
+          ],
         })(<Input placeholder="请输入" />)}
       </FormItem>
     </Modal>
@@ -553,7 +572,7 @@ class RoleManage extends PureComponent {
             <div className={styles.tableListForm}>{this.renderSimpleForm()}</div>
             <div className={styles.tableListOperator}>
               <Button type="primary" onClick={() => this.handleModalVisible(true)}>
-                新建
+                新建顶级菜单
               </Button>
               <Dropdown overlay={menu}>
                 <Button>
