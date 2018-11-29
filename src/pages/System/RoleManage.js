@@ -572,6 +572,7 @@ class RoleManage extends PureComponent {
               )}
             </div>
             <StandardTable
+              size="small"
               selectedRows={selectedRows}
               loading={loading}
               data={data}
