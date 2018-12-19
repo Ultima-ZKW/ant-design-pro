@@ -67,6 +67,7 @@ export default {
   // Theme for antd
   // https://ant.design/docs/react/customize-theme-cn
   theme: {
+    'layout-header-height': '50px',
     'primary-color': defaultSettings.primaryColor,
   },
   externals: {

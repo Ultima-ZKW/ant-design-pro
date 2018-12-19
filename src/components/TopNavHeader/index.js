@@ -32,7 +32,7 @@ export default class TopNavHeader extends PureComponent {
             <div className={styles.logo} key="logo" id="logo">
               <Link to="/">
                 <img src={logo} alt="logo" />
-                <h1>现代金控·风控管理</h1>
+                <h1>Ant Design Pro</h1>
               </Link>
             </div>
             <div
@@ -40,11 +40,7 @@ export default class TopNavHeader extends PureComponent {
                 maxWidth,
               }}
             >
-              <BaseMenu
-                {...this.props}
-                flatMenuKeys={flatMenuKeys}
-                style={{ border: 'none', height: 50 }}
-              />
+              <BaseMenu {...this.props} flatMenuKeys={flatMenuKeys} className={styles.menu} />
             </div>
           </div>
           <RightContent {...this.props} />
